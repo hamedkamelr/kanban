@@ -9,18 +9,6 @@ A single-board Kanban web app built with Next.js (App Router, client-rendered), 
 
 ---
 
-## Phase 0: Repository Scaffolding
-
-**Goal:** Establish the repo root with `.gitignore` and a minimal README before any code is written.
-
-### Success Criteria
-
-- [ ] `d:/ProjectsAI/kanban/.gitignore` exists and covers `node_modules/`, `.next/`, coverage, playwright artifacts
-- [ ] `d:/ProjectsAI/kanban/README.md` exists with at minimum a one-line run instruction
-- [ ] No other files exist at the repo root yet
-
----
-
 ## Phase 1: Next.js Project Scaffold
 
 **Goal:** Bootstrap the Next.js project into `frontend/` with TypeScript, Tailwind CSS, ESLint, App Router. Install all runtime and dev dependencies.
@@ -36,14 +24,6 @@ A single-board Kanban web app built with Next.js (App Router, client-rendered), 
 7. Replace `globals.css` with Tailwind import and CSS custom properties for the 5 brand colors
 8. Create `jest.config.ts` and `jest.setup.ts`
 9. Create `playwright.config.ts` pointing at `http://localhost:3000` with `webServer` set to `npm run dev`
-
-### Success Criteria
-
-- [ ] `frontend/package.json` contains all required dependencies
-- [ ] `npm run dev` starts without errors and `http://localhost:3000` responds
-- [ ] `npm test -- --passWithNoTests` exits 0
-- [ ] `jest.config.ts`, `jest.setup.ts`, and `playwright.config.ts` exist
-- [ ] `globals.css` defines the five CSS custom properties (`--color-yellow`, `--color-blue`, `--color-purple`, `--color-navy`, `--color-gray`)
 
 ---
 
@@ -66,13 +46,6 @@ A single-board Kanban web app built with Next.js (App Router, client-rendered), 
 | `DELETE_CARD` | Remove card from a column |
 | `RENAME_COLUMN` | Update a column's name |
 
-### Success Criteria
-
-- [ ] `tsc --noEmit` passes
-- [ ] `INITIAL_BOARD` has exactly 5 columns, each with `id`, `name`, and `cards`
-- [ ] `BoardProvider` and `useBoard` are exported from `BoardContext.tsx`
-- [ ] All four action types handled in reducer with no fallthrough
-- [ ] Unit test `__tests__/boardReducer.test.ts` covers all 4 actions and passes
 
 ---
 
@@ -110,21 +83,6 @@ components/
 | Badges / pills | `#753991` (purple) |
 | Dragging card ring | `#209dd7` |
 
-### Success Criteria
-
-- [ ] Board renders with 5 visible columns and all dummy cards
-- [ ] Dragging a card between columns persists the move
-- [ ] Dragging within the same column reorders correctly
-- [ ] Dropping outside any column leaves state unchanged
-- [ ] Double-clicking a column header activates rename input; Enter saves, Escape cancels
-- [ ] Clicking "+ Add card" shows inline form; submitting adds card to that column
-- [ ] Clicking "x" on a card deletes it immediately
-- [ ] Clicking a card body opens the modal; Escape or backdrop click closes it
-- [ ] No horizontal overflow; columns are equal width and fill the viewport
-- [ ] Color scheme matches spec
-
----
-
 ## Phase 4: Unit Tests
 
 **Goal:** All critical logic and component behaviors covered. `npm test` passes.
@@ -139,13 +97,6 @@ components/
 | `__tests__/AddCardForm.test.tsx` | Submit, validation, Escape, autofocus |
 | `__tests__/CardModal.test.tsx` | Render, backdrop close, Escape close |
 | `__tests__/initialBoard.test.ts` | 5 columns, all IDs unique, required fields |
-
-### Success Criteria
-
-- [ ] `npm test` exits 0
-- [ ] All 6 test files found and executed
-- [ ] Zero skipped or todo tests
-- [ ] `tsc --noEmit` passes on test files
 
 ---
 
@@ -163,13 +114,6 @@ components/
 | Delete card | Hover card, click x → card removed from column |
 | Open/close modal | Click card body → modal visible; Escape → modal gone |
 | Drag between columns | Drag card from column 1 to column 2 → card moved |
-
-### Success Criteria
-
-- [ ] `npm run test:e2e` exits 0
-- [ ] All 6 scenarios pass
-- [ ] No timeout or element-not-found failures on clean run
-- [ ] Playwright HTML report generated in `playwright-report/`
 
 ---
 
